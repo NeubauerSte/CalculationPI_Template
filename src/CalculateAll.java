@@ -10,8 +10,9 @@ Erstes Projekt mit Github und Git Bash
 
 public abstract class CalculateAll {
 
-    public abstract String calculate(int basis);
-    public String toString(int basis){ return calculate(basis); }
+    public static double basis, nenner, zaehler, pi; // Generalization
 
+    public abstract double calculate();
+    public abstract String toString();
 
 }
