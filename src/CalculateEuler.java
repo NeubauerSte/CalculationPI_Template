@@ -9,6 +9,8 @@ bei mir war es die Ausgabe und die Generalization hat gefehlt.
 Dann noch etwas erweitern, und zwar sortieren.
  */
 
+import java.math.BigDecimal;
+
 public class CalculateEuler extends CalculateAll {
 
     @Override
@@ -22,7 +24,10 @@ public class CalculateEuler extends CalculateAll {
 
     @Override
     public String toString(){
-        return "Das Ergebnis mit der Formel von Euler für Pi mit der Basis "+basis+" lautet: "+calculate()+".";
+
+
+        return "Formel von Euler: "+calculate()+".\n";
+
     }
 
 }

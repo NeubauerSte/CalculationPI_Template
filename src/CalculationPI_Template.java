@@ -1,4 +1,5 @@
 
+import java.math.BigDecimal;
 import java.util.*;
 
  /*
@@ -13,62 +14,46 @@ import java.util.*;
 
 public class CalculationPI_Template {
     static CalculateAll[] allMethods;
+
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-        double[] ergebnisse = new double[4];
+
+        allMethods = new CalculateAll[]{new CalculateLeibnitz(), new CalculateKellalur(), new CalculateEuler(), new CalculateWallprodukt()};
 
         try { // Exceptionhandling
             System.out.println("Wie oft soll multipliziert werden für PI?");
-            CalculateAll.basis = sc.nextInt(); }
-        catch (InputMismatchException iem){ System.out.println("Bitte eine ZAHL angeben!"); System.exit(0); }
+            CalculateAll.basis = sc.nextInt();
+        } catch (InputMismatchException iem) {
+            System.out.println("Bitte eine ZAHL angeben!");
+            System.exit(0);
+        }
 
-        // Nochmal etwas überdenkt, so finde ich es besser
-        allMethods = new CalculateAll[]{ new CalculateLeibnitz(), new CalculateKellalur(), new CalculateEuler(), new CalculateWallprodukt()};
+        System.out.println("Basis: " + CalculateAll.basis+".\n");
 
-        // Array mit allen Ergebnissen der Methoden
-        for (int i = 0; i <allMethods.length ; i++) { ergebnisse[i] = allMethods[i].calculate(); }
+        sort(); // Hiermit werden die Ergebnisse absteigend sortiert. Jedoch nicht die Differenzen.
+        print(); // Ausgabe
 
-        print(false); // Nicht Sortierte Ausgabe
-        print(true); // Sortierte Ausgabe
+        BigDecimal[] differenzen = new BigDecimal[4];
+        for (int i = 0; i <allMethods.length ; i++) { differenzen[i] = allMethods[i].getDifferenz(); }
+        Arrays.sort(differenzen); // Sortiert, dass zuerst das näheste ausgegeben wird.
 
+        System.out.println("\nDIFFERENZEN ABSTEIGEND SORTIERT:");
 
-
-
-    /*
-    AUFGABENSTELLUNG: erstellen Sie eine Methode zum Vergleich der Algorithmen
-
-    absteigend sortiert, d.h. das Ergebnis, das Pi am nächsten kommt, zuerst
-    beachten Sie negative und positive Differenzen, arbeiten Sie mit absoluten Zahlen
-    legen Sie sich eine Referenzzahl für PI als Konstante an
-    versuchen Sie es möglichst einfach (Lösung mit compareTo möglich?)
-
-    Denken Sie an eine objektorientierte Lösung!
-    */
-
-    }
-
-    public static void compareAlgorithm(){
-
-        final double FINALPI = Math.PI; // Von IntelliJ integriert, zum vergleich zu den Rechnungen
+        for(BigDecimal differenz: differenzen){
+            System.out.println(differenz.toPlainString());
+        }
 
 
     }
 
-    public static void print(boolean sort){
-        if (sort){ sort();System.out.println("\n==============================SORTIERT=============================="); } // sort()
-        else { System.out.println("\n==============================NICHT SORTIERT=============================="); } // kein sort()
-
+    public static void print() {
         for (CalculateAll allMethod : allMethods) { System.out.println(allMethod.toString()); } // Ausgabe
     }
 
-    public static void sort(){
-        Arrays.sort(allMethods, new Comparator<CalculateAll>() {
-            @Override
-            public int compare(CalculateAll o1, CalculateAll o2) {
-                return Double.compare(o1.calculate(), o2.calculate());
-            }
-        });
-    }
+    public static void sort() {
+        // Eine neue Methode zum sortieren, die ich gefunden habe. Sie ist in nur einer Zeile erledigt! (Lambda Expression)
+            Arrays.sort(allMethods, (calc1, calc2) -> Double.compare(calc2.calculate(), calc1.calculate()));
 
+    }
 }

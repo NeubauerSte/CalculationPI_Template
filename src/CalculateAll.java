@@ -10,12 +10,20 @@ Dann noch etwas erweitern, und zwar sortieren.
  */
 
 
+import java.math.BigDecimal;
+
 public abstract class CalculateAll {
 
-    public static double nenner, zaehler, pi; // Generalization
-    public static int basis;
+    final static double FINALPI = Math.PI;
+    public static double nenner, zaehler, pi, basis; // Generalization
+
+
 
     public abstract double calculate();
     public abstract String toString();
+
+
+    // Mit diesem Konstrukt kann man den Betrag bekommen und mit BigDecimal eine Atomgenaue Ausgabe
+    public BigDecimal getDifferenz(){ return (BigDecimal.valueOf(FINALPI-calculate()).abs()); }
 
 }

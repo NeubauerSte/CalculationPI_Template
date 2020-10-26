@@ -9,6 +9,8 @@ bei mir war es die Ausgabe und die Generalization hat gefehlt.
 Dann noch etwas erweitern, und zwar sortieren.
  */
 
+import java.math.BigDecimal;
+
 public class CalculateKellalur extends CalculateAll {
     double ergebnis;
 
@@ -27,7 +29,9 @@ public class CalculateKellalur extends CalculateAll {
 
     @Override
     public String toString(){
-        return   "Das Ergebnis mit der Kellalurformel für Pi mit der Basis "+basis+" lautet: "+calculate()+".";
+
+        return   "Kellalurformel: "+calculate()+".\n";
+
     }
 
 
