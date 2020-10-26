@@ -1,16 +1,19 @@
 /*
 Autor: Stefan Neubauer
-Erstellt am 12.10.2020
+Erstellt am 26.10.2020
 
 Beschreibung:
-Erstes Projekt mit Github und Git Bash
---> Pi berechnen, ziemlich simpel, jedoch muss alles mit Git funktionieren.
+CalculationPI aus Fehlern lernen und diese ausbessern,
+bei mir war es die Ausgabe und die Generalization hat gefehlt.
+
+Dann noch etwas erweitern, und zwar sortieren.
  */
 
 
 public abstract class CalculateAll {
 
-    public static double basis, nenner, zaehler, pi; // Generalization
+    public static double nenner, zaehler, pi; // Generalization
+    public static int basis;
 
     public abstract double calculate();
     public abstract String toString();

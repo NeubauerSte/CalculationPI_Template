@@ -1,10 +1,12 @@
 /*
 Autor: Stefan Neubauer
-Erstellt am 12.10.2020
+Erstellt am 26.10.2020
 
 Beschreibung:
-Erstes Projekt mit Github und Git Bash
---> Pi berechnen, ziemlich simpel, jedoch muss alles mit Git funktionieren.
+CalculationPI aus Fehlern lernen und diese ausbessern,
+bei mir war es die Ausgabe und die Generalization hat gefehlt.
+
+Dann noch etwas erweitern, und zwar sortieren.
  */
 
 public class CalculateLeibnitz extends CalculateAll {
@@ -24,7 +26,7 @@ public class CalculateLeibnitz extends CalculateAll {
     @Override
     public String toString(){
 
-        return "Das Ergebnis mit der Leibnitzreihe für Pi mit der Basis "+basis+" lautet: "+calculate()+".\n";
+        return "Das Ergebnis mit der Leibnitzreihe für Pi mit der Basis "+basis+" lautet: "+calculate()+".";
     }
 
 
