@@ -21,6 +21,8 @@ public abstract class CalculateAll {
 
     public abstract double calculate();
     public abstract String toString();
+    public abstract String getName();
+
 
 
     // Mit diesem Konstrukt kann man den Betrag bekommen und mit BigDecimal eine Atomgenaue Ausgabe

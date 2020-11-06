@@ -12,6 +12,7 @@ Dann noch etwas erweitern, und zwar sortieren.
 import java.math.BigDecimal;
 
 public class CalculateWallprodukt extends CalculateAll {
+    String name="Wallprodukt";
 
     @Override
     public double calculate() {
@@ -31,4 +32,6 @@ public class CalculateWallprodukt extends CalculateAll {
         return "Wallissches Produkt: "+calculate()+".\n";
 
     }
+
+    public String getName(){ return name; }
 }

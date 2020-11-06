@@ -34,15 +34,13 @@ public class CalculationPI_Template {
         sort(); // Hiermit werden die Ergebnisse absteigend sortiert. Jedoch nicht die Differenzen.
         print(); // Ausgabe
 
-        BigDecimal[] differenzen = new BigDecimal[4];
-        for (int i = 0; i <allMethods.length ; i++) { differenzen[i] = allMethods[i].getDifferenz(); }
+        String[] differenzen = new String[4];
+        for (int i = 0; i <allMethods.length ; i++) { differenzen[i] = allMethods[i].getDifferenz().toPlainString() + "("+allMethods[i].getName()+")"; }
         Arrays.sort(differenzen); // Sortiert, dass zuerst das näheste ausgegeben wird.
 
         System.out.println("\nDIFFERENZEN ABSTEIGEND SORTIERT:");
 
-        for(BigDecimal differenz: differenzen){
-            System.out.println(differenz.toPlainString());
-        }
+        for(String differenz: differenzen){ System.out.println(differenz); }
 
 
     }

@@ -12,6 +12,7 @@ Dann noch etwas erweitern, und zwar sortieren.
 import java.math.BigDecimal;
 
 public class CalculateEuler extends CalculateAll {
+    String name="Euler";
 
     @Override
     public double calculate(){
@@ -29,5 +30,7 @@ public class CalculateEuler extends CalculateAll {
         return "Formel von Euler: "+calculate()+".\n";
 
     }
+
+    public String getName(){ return name; }
 
 }

@@ -12,6 +12,7 @@ Dann noch etwas erweitern, und zwar sortieren.
 import java.math.BigDecimal;
 
 public class CalculateLeibnitz extends CalculateAll {
+    private String name="Leibnitz";
 
     @Override
     public double calculate(){
@@ -31,5 +32,6 @@ public class CalculateLeibnitz extends CalculateAll {
         return "Leibnitzreihe: "+calculate()+".\n";
     }
 
+    public String getName(){ return name; }
 
 }

@@ -9,8 +9,10 @@ bei mir war es die Ausgabe und die Generalization hat gefehlt.
 Dann noch etwas erweitern, und zwar sortieren.
  */
 
+import java.math.BigDecimal;
 
 public class CalculateKellalur extends CalculateAll {
+    String name="Kellalur";
 
     @Override
     public double calculate() {
@@ -32,5 +34,5 @@ public class CalculateKellalur extends CalculateAll {
 
     }
 
-
+    public String getName(){ return name; }
 }
